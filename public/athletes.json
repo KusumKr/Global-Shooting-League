@@ -1,0 +1,964 @@
+[
+  {
+    "id": 1,
+    "name": "Jin Jong-oh",
+    "gender": "Male",
+    "birthday": "24.09.1979",
+    "age": 45,
+    "residence": "South Korea",
+    "height": "1.78m",
+    "weight": "73kg",
+    "country": "South Korea",
+    "flag": "/flags/south-korea.png",
+    "image": "/images/KOCIS_London_Korea_Jinjongoh_Shooting_06_(7683325808).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 4,
+        "silver": 2,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 4,
+        "silver": 3,
+        "bronze": 2
+      },
+      "World Cup": {
+        "gold": 10,
+        "silver": 8,
+        "bronze": 5
+      },
+      "Asian Games": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 2
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "50m Pistol Men",
+        "city": "London",
+        "year": 2012,
+        "qualification": "567",
+        "final": "662.0"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Pistol Men",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "581",
+        "final": "193.7"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Niccolo Campriani",
+    "gender": "Male",
+    "birthday": "06.11.1987",
+    "age": 37,
+    "residence": "Italy",
+    "height": "1.82m",
+    "weight": "78kg",
+    "country": "Italy",
+    "flag": "/flags/italy.png",
+    "image": "/images/NIccol_CAMPRIANI_big.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 1,
+        "silver": 3,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 8,
+        "silver": 5,
+        "bronze": 4
+      },
+      "European Championships": {
+        "gold": 4,
+        "silver": 2,
+        "bronze": 1
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "50m Rifle 3 Positions Men",
+        "city": "London",
+        "year": 2012,
+        "qualification": "1180",
+        "final": "1278.5"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Men",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "630.2",
+        "final": "206.1"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Abhinav Bindra",
+    "gender": "Male",
+    "birthday": "28.09.1982",
+    "age": 42,
+    "residence": "India",
+    "height": "1.80m",
+    "weight": "76kg",
+    "country": "India",
+    "flag": "/flags/india.png",
+    "image": "/images/Frame 98 (3).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 4,
+        "silver": 3,
+        "bronze": 2
+      },
+      "Asian Games": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 2
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Men",
+        "city": "Beijing",
+        "year": 2008,
+        "qualification": "596",
+        "final": "700.5"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Men",
+        "city": "Munich",
+        "year": 2006,
+        "qualification": "597",
+        "final": "703.0"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Vincent Hancock",
+    "gender": "Male",
+    "birthday": "19.03.1989",
+    "age": 36,
+    "residence": "USA",
+    "height": "1.83m",
+    "weight": "80kg",
+    "country": "USA",
+    "flag": "/flags/usa.png",
+    "image": "/images/images.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 3,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 5,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 14,
+        "silver": 6,
+        "bronze": 4
+      },
+      "Pan American Games": {
+        "gold": 2,
+        "silver": 0,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "Skeet Men",
+        "city": "Beijing",
+        "year": 2008,
+        "qualification": "121",
+        "final": "145"
+      },
+      {
+        "rank": 1,
+        "event": "Skeet Men",
+        "city": "London",
+        "year": 2012,
+        "qualification": "123",
+        "final": "148"
+      },
+      {
+        "rank": 1,
+        "event": "Skeet Men",
+        "city": "Tokyo",
+        "year": 2021,
+        "qualification": "124",
+        "final": "59"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Matthew Emmons",
+    "gender": "Male",
+    "birthday": "05.04.1981",
+    "age": 43,
+    "residence": "USA",
+    "height": "1.85m",
+    "weight": "82kg",
+    "country": "USA",
+    "flag": "/flags/usa.png",
+    "image": "/images/Frame 98 (7).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      },
+      "World Championships": {
+        "gold": 5,
+        "silver": 4,
+        "bronze": 2
+      },
+      "World Cup": {
+        "gold": 15,
+        "silver": 12,
+        "bronze": 8
+      },
+      "Pan American Games": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "50m Rifle Prone Men",
+        "city": "Athens",
+        "year": 2004,
+        "qualification": "599",
+        "final": "703.3"
+      },
+      {
+        "rank": 2,
+        "event": "50m Rifle 3 Positions Men",
+        "city": "Beijing",
+        "year": 2008,
+        "qualification": "1176",
+        "final": "1272.5"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sergei Martynov",
+    "gender": "Male",
+    "birthday": "25.01.1968",
+    "age": 57,
+    "residence": "Belarus",
+    "height": "1.79m",
+    "weight": "75kg",
+    "country": "Belarus",
+    "flag": "/flags/belarus.png",
+    "image": "/images/Sergei_Martynov_(sport_shooter) 1.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 2
+      },
+      "World Championships": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 3
+      },
+      "World Cup": {
+        "gold": 11,
+        "silver": 7,
+        "bronze": 9
+      },
+      "European Championships": {
+        "gold": 5,
+        "silver": 3,
+        "bronze": 2
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "50m Rifle Prone Men",
+        "city": "London",
+        "year": 2012,
+        "qualification": "600",
+        "final": "705.5"
+      },
+      {
+        "rank": 3,
+        "event": "50m Rifle Prone Men",
+        "city": "Sydney",
+        "year": 2000,
+        "qualification": "597",
+        "final": "696.4"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Gagan Narang",
+    "gender": "Male",
+    "birthday": "06.05.1983",
+    "age": 41,
+    "residence": "India",
+    "height": "1.75m",
+    "weight": "78kg",
+    "country": "India",
+    "flag": "/flags/india.png",
+    "image": "/images/Gagan.jpg",
+    "medals": {
+      "Olympic Games": {
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      "World Championships": {
+        "gold": 0,
+        "silver": 1,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 8,
+        "silver": 6,
+        "bronze": 5
+      },
+      "Commonwealth Games": {
+        "gold": 8,
+        "silver": 1,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 3,
+        "event": "10m Air Rifle Men",
+        "city": "London",
+        "year": 2012,
+        "qualification": "598",
+        "final": "699.5"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Men",
+        "city": "Delhi",
+        "year": 2010,
+        "qualification": "595",
+        "final": "703.6"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Rajyavardhan Singh Rathore",
+    "gender": "Male",
+    "birthday": "29.01.1970",
+    "age": 55,
+    "residence": "India",
+    "height": "1.83m",
+    "weight": "85kg",
+    "country": "India",
+    "flag": "/flags/india.png",
+    "image": "/images/Frame 98 (6).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1
+      },
+      "Commonwealth Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 2,
+        "event": "Double Trap Men",
+        "city": "Athens",
+        "year": 2004,
+        "qualification": "135",
+        "final": "179"
+      },
+      {
+        "rank": 1,
+        "event": "Double Trap Men",
+        "city": "Melbourne",
+        "year": 2006,
+        "qualification": "137",
+        "final": "181"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Zhu Qinan",
+    "gender": "Male",
+    "birthday": "15.11.1984",
+    "age": 40,
+    "residence": "China",
+    "height": "1.72m",
+    "weight": "68kg",
+    "country": "China",
+    "flag": "/flags/china.png",
+    "image": "/images/Frame 98.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 9,
+        "silver": 6,
+        "bronze": 4
+      },
+      "Asian Games": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Men",
+        "city": "Athens",
+        "year": 2004,
+        "qualification": "599",
+        "final": "702.7"
+      },
+      {
+        "rank": 2,
+        "event": "10m Air Rifle Men",
+        "city": "Beijing",
+        "year": 2008,
+        "qualification": "596",
+        "final": "699.7"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Vitalina Batsarashkina",
+    "gender": "Female",
+    "birthday": "01.10.1996",
+    "age": 28,
+    "residence": "Russia",
+    "height": "1.65m",
+    "weight": "58kg",
+    "country": "Russia",
+    "flag": "/flags/russia.png",
+    "image": "/images/Frame 98 (5).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 3
+      },
+      "World Cup": {
+        "gold": 7,
+        "silver": 5,
+        "bronze": 3
+      },
+      "European Championships": {
+        "gold": 5,
+        "silver": 4,
+        "bronze": 2
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Pistol Women",
+        "city": "Tokyo",
+        "year": 2021,
+        "qualification": "582",
+        "final": "240.3"
+      },
+      {
+        "rank": 1,
+        "event": "25m Pistol Women",
+        "city": "Tokyo",
+        "year": 2021,
+        "qualification": "292",
+        "final": "38"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Kimberly Rhode",
+    "gender": "Female",
+    "birthday": "16.07.1979",
+    "age": 45,
+    "residence": "USA",
+    "height": "1.72m",
+    "weight": "63kg",
+    "country": "USA",
+    "flag": "/flags/usa.png",
+    "image": "/images/Frame 98 (1).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 2
+      },
+      "World Championships": {
+        "gold": 4,
+        "silver": 3,
+        "bronze": 2
+      },
+      "World Cup": {
+        "gold": 15,
+        "silver": 9,
+        "bronze": 7
+      },
+      "Pan American Games": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "Double Trap Women",
+        "city": "Atlanta",
+        "year": 1996,
+        "qualification": "107",
+        "final": "141"
+      },
+      {
+        "rank": 1,
+        "event": "Skeet Women",
+        "city": "London",
+        "year": 2012,
+        "qualification": "74",
+        "final": "99"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Manu Bhaker",
+    "gender": "Female",
+    "birthday": "18.02.2002",
+    "age": 23,
+    "residence": "India",
+    "height": "1.68m",
+    "weight": "60kg",
+    "country": "India",
+    "flag": "/flags/india.png",
+    "image": "/images/image 20.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 0,
+        "silver": 0,
+        "bronze": 2
+      },
+      "World Championships": {
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 5,
+        "silver": 2,
+        "bronze": 1
+      },
+      "Commonwealth Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 3,
+        "event": "10m Air Pistol Women",
+        "city": "Paris",
+        "year": 2024,
+        "qualification": "580",
+        "final": "221.7"
+      },
+      {
+        "rank": 3,
+        "event": "10m Air Pistol Mixed Team",
+        "city": "Paris",
+        "year": 2024,
+        "qualification": "580",
+        "final": "16"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Yi Siling",
+    "gender": "Female",
+    "birthday": "06.05.1989",
+    "age": 35,
+    "residence": "China",
+    "height": "1.65m",
+    "weight": "56kg",
+    "country": "China",
+    "flag": "/flags/china.png",
+    "image": "/images/yi-siling 1.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      "World Championships": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 8,
+        "silver": 5,
+        "bronze": 3
+      },
+      "Asian Games": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Women",
+        "city": "London",
+        "year": 2012,
+        "qualification": "399",
+        "final": "502.9"
+      },
+      {
+        "rank": 3,
+        "event": "10m Air Rifle Women",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "416.8",
+        "final": "185.4"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Jin Jongoh",
+    "gender": "Female",
+    "birthday": "08.03.1994",
+    "age": 31,
+    "residence": "South Korea",
+    "height": "1.69m",
+    "weight": "59kg",
+    "country": "South Korea",
+    "flag": "/flags/south-korea.png",
+    "image": "/images/jin jongoh.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 9,
+        "silver": 6,
+        "bronze": 4
+      },
+      "Asian Games": {
+        "gold": 3,
+        "silver": 2,
+        "bronze": 1
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "25m Pistol Women",
+        "city": "London",
+        "year": 2012,
+        "qualification": "585",
+        "final": "792.4"
+      },
+      {
+        "rank": 1,
+        "event": "25m Pistol Women",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "589",
+        "final": "38"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Wei Meng",
+    "gender": "Female",
+    "birthday": "05.02.1993",
+    "age": 32,
+    "residence": "China",
+    "height": "1.70m",
+    "weight": "64kg",
+    "country": "China",
+    "flag": "/flags/china.png",
+    "image": "/images/117315401_14fec8f0-1d4d-410b-855a-7fd0b7bb003dcopycopy.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 0,
+        "silver": 0,
+        "bronze": 1
+      },
+      "World Championships": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 1
+      },
+      "World Cup": {
+        "gold": 7,
+        "silver": 4,
+        "bronze": 5
+      },
+      "Asian Games": {
+        "gold": 1,
+        "silver": 2,
+        "bronze": 0
+      }
+    },
+    "achievements": [
+      {
+        "rank": 3,
+        "event": "Skeet Women",
+        "city": "Tokyo",
+        "year": 2021,
+        "qualification": "124",
+        "final": "43"
+      },
+      {
+        "rank": 1,
+        "event": "Skeet Women",
+        "city": "Changwon",
+        "year": 2018,
+        "qualification": "123",
+        "final": "55"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Zhang Mengxue",
+    "gender": "Female",
+    "birthday": "07.01.1991",
+    "age": 34,
+    "residence": "China",
+    "height": "1.67m",
+    "weight": "58kg",
+    "country": "China",
+    "flag": "/flags/china.png",
+    "image": "/images/Frame 98 (4).png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 1,
+        "silver": 1,
+        "bronze": 2
+      },
+      "World Cup": {
+        "gold": 5,
+        "silver": 3,
+        "bronze": 4
+      },
+      "Asian Games": {
+        "gold": 1,
+        "silver": 1,
+        "bronze": 1
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Pistol Women",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "384",
+        "final": "199.4"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Pistol Women",
+        "city": "Bangkok",
+        "year": 2015,
+        "qualification": "385",
+        "final": "197.8"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Anna Korakaki",
+    "gender": "Female",
+    "birthday": "12.04.1996",
+    "age": 28,
+    "residence": "Greece",
+    "height": "1.70m",
+    "weight": "62kg",
+    "country": "Greece",
+    "flag": "/flags/greece.png",
+    "image": "/images/anna korakaki.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      },
+      "World Championships": {
+        "gold": 2,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 6,
+        "silver": 5,
+        "bronze": 3
+      },
+      "European Championships": {
+        "gold": 4,
+        "silver": 2,
+        "bronze": 2
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "25m Pistol Women",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "584",
+        "final": "8"
+      },
+      {
+        "rank": 3,
+        "event": "10m Air Pistol Women",
+        "city": "Rio",
+        "year": 2016,
+        "qualification": "385",
+        "final": "177.7"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Apurvi Chandela",
+    "gender": "Female",
+    "birthday": "04.01.1993",
+    "age": 32,
+    "residence": "India",
+    "height": "1.65m",
+    "weight": "57kg",
+    "country": "India",
+    "flag": "/flags/india.png",
+    "image": "/images/Apurvi_Chandela_at_the_12th_South_Asian_Games_2016 1.png",
+    "medals": {
+      "Olympic Games": {
+        "gold": 0,
+        "silver": 0,
+        "bronze": 0
+      },
+      "World Championships": {
+        "gold": 0,
+        "silver": 1,
+        "bronze": 0
+      },
+      "World Cup": {
+        "gold": 3,
+        "silver": 1,
+        "bronze": 2
+      },
+      "Commonwealth Games": {
+        "gold": 1,
+        "silver": 0,
+        "bronze": 1
+      }
+    },
+    "achievements": [
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Women",
+        "city": "New Delhi",
+        "year": 2019,
+        "qualification": "629.3",
+        "final": "252.9"
+      },
+      {
+        "rank": 1,
+        "event": "10m Air Rifle Women",
+        "city": "Munich",
+        "year": 2019,
+        "qualification": "630.9",
+        "final": "251.0"
+      }
+    ]
+  }
+]
