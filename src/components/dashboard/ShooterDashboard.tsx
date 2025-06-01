@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../supabase/auth";
-import { supabase } from "../../../supabase/supabase";
+import React, { useState } from "react";
+import { useAuth } from "@/firebase/auth";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import {
@@ -18,114 +17,9 @@ import ShootingLeaderboard from "./ShootingLeaderboard";
 const ShooterDashboard = () => {
   const { signOut, user } = useAuth();
   const navigate = useNavigate();
-  const [profileCompletion, setProfileCompletion] = useState(0);
-  const [recentScore, setRecentScore] = useState<number | null>(null);
-  const [userRank, setUserRank] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (user) {
-      fetchProfileCompletion();
-      fetchRecentScore();
-      fetchUserRank();
-    }
-  }, [user]);
-
-  const fetchProfileCompletion = async () => {
-    try {
-      const { data, error } = await supabase
-        .from("shooter_profiles")
-        .select("*")
-        .eq("user_id", user?.id)
-        .single();
-
-      if (error && error.code !== "PGRST116") {
-        console.error("Error fetching profile:", error);
-        return;
-      }
-
-      if (data) {
-        // Calculate profile completion percentage
-        const fields = [
-          "height",
-          "weight",
-          "age",
-          "eye_sight_left",
-          "eye_sight_right",
-          "dominant_hand",
-          "favorite_gun",
-          "favorite_ammunition",
-          "favorite_stance",
-          "additional_equipment",
-        ];
-
-        const filledFields = fields.filter(
-          (field) => data[field] !== null && data[field] !== "",
-        );
-        const completionPercentage = Math.round(
-          (filledFields.length / fields.length) * 100,
-        );
-        setProfileCompletion(completionPercentage);
-      } else {
-        setProfileCompletion(0);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const fetchRecentScore = async () => {
-    try {
-      const { data, error } = await supabase
-        .from("shooting_sessions")
-        .select("total_score")
-        .eq("user_id", user?.id)
-        .order("session_date", { ascending: false })
-        .limit(1);
-
-      if (error) {
-        console.error("Error fetching recent score:", error);
-        return;
-      }
-
-      if (data && data.length > 0) {
-        setRecentScore(data[0].total_score);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const fetchUserRank = async () => {
-    try {
-      // Get all sessions ordered by score
-      const { data, error } = await supabase
-        .from("shooting_sessions")
-        .select("id, user_id, total_score")
-        .order("total_score", { ascending: false });
-
-      if (error) {
-        console.error("Error fetching rankings:", error);
-        return;
-      }
-
-      if (data) {
-        // Find the highest ranked session for the current user
-        const userSessions = data.filter(
-          (session) => session.user_id === user?.id,
-        );
-        if (userSessions.length > 0) {
-          // Find the index of the user's highest score in the overall ranking
-          const highestUserSession = userSessions[0];
-          const rankIndex = data.findIndex(
-            (session) => session.id === highestUserSession.id,
-          );
-          setUserRank(rankIndex + 1); // +1 because array indices are 0-based
-        }
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  const [profileCompletion] = useState(0);
+  const [recentScore] = useState<number | null>(null);
+  const [userRank] = useState<number | null>(null);
 
   const handleSignOut = async () => {
     await signOut();

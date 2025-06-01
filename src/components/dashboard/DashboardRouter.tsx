@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useAuth, UserRole } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 import ShooterDashboard from "./ShooterDashboard";
 import RangeOwnerDashboard from "./RangeOwnerDashboard";
 import AdminDashboard from "./AdminDashboard";

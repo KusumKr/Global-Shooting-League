@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import {

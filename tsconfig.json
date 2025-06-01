@@ -6,8 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "noEmitOnError": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
 
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -17,9 +19,10 @@
     "strict": false,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["node"]
   },
-  "include": ["src", "supabase/auth.tsx", "supabase/supabase.ts"],
+  "include": ["src"],
   "exclude": ["src/tempobook"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

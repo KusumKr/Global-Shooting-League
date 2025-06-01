@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "../../firebase/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,60 +17,21 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Prevent multiple submissions
-    e.currentTarget.setAttribute("disabled", "true");
+    const submitButton = document.getElementById("login-button");
+    if (submitButton) submitButton.setAttribute("disabled", "true");
 
     try {
       setError("");
-      console.group("Login Attempt");
-      console.log("Attempting login", {
-        email,
-        isAdmin,
-        timestamp: new Date().toISOString(),
-      });
-
-      try {
-        console.log("Initiating sign-in process");
         await signIn(email, password);
-        console.log("Sign-in successful");
         navigate("/dashboard");
-      } catch (signInError) {
-        console.error("Sign-in process error:", {
-          error: signInError,
-          errorMessage:
-            signInError instanceof Error
-              ? signInError.message
-              : "Unknown error",
-        });
-
-        // More specific error handling
-        if (signInError instanceof Error) {
-          switch (signInError.message) {
-            case "Invalid login credentials":
-              setError("Incorrect email or password");
-              break;
-            case "Email not confirmed":
-              setError("Please confirm your email first");
-              break;
-            default:
-              setError(
-                signInError.message || "Login failed. Please try again."
-              );
-          }
-        } else {
-          setError("An unexpected error occurred");
-        }
-      }
-
-      console.groupEnd();
-    } catch (error) {
-      console.error("Unexpected error during login:", error);
-      setError("An unexpected error occurred");
+    } catch (error: any) {
+      console.error("Login error:", error);
+      setError(error.message || "Failed to login");
     } finally {
-      document.getElementById("login-button")?.removeAttribute("disabled");
+      if (submitButton) submitButton.removeAttribute("disabled");
     }
   };
+
   return (
     <AuthLayout>
       <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md mx-auto">
@@ -152,6 +113,7 @@ export default function LoginForm() {
           )}
           {error && <p className="text-sm text-red-500">{error}</p>}
           <Button
+            id="login-button"
             type="submit"
             className="w-full h-12 rounded-full bg-black text-white hover:bg-gray-800 text-sm font-medium"
           >

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "../../firebase/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -150,6 +150,16 @@ export default function SignUpForm() {
           {error && <p className="text-sm text-red-500">{error}</p>}
 
           <Button type="submit">Create account</Button>
+
+          <div className="text-sm text-center text-gray-600 mt-6">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="text-blue-600 hover:underline font-medium"
+            >
+              Sign in
+            </Link>
+          </div>
         </form>
       </div>
     </AuthLayout>

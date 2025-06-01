@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import rangesData from "../../../public/ranges.json";
 import Map from "../dashboard/Map";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 import Layout from "./Layout";
 
 export default function ShootingRanges() {

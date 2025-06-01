@@ -237,52 +237,37 @@ const ParallaxScrollPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {videos.map((video) => (
-              <div
-                key={video.id}
-                className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl cursor-pointer"
-                onClick={() => openVideoModal(video.youtubeId)}
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-2xl aspect-video rounded-lg overflow-hidden shadow-lg">
+              <a
+                href="https://www.youtube.com/watch?v=iLd34M-SboQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full h-full group"
               >
-                {/* Red side indicator for videos */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500 group-hover:bg-red-400 transition-colors"></div>
-
-                <div className="relative aspect-video">
-                  <img
-                    src={video.thumbnailPath}
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                    style={{ filter: "brightness(0.8) contrast(1.1)" }}
-                  />
-
-                  {/* Play button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-red-600 bg-opacity-80 rounded-full w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-opacity-90">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-white"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
-                    <h3 className="text-white font-bold">{video.title}</h3>
-                    <span className="text-white text-sm flex items-center mt-1">
-                      Watch video
-                    </span>
+                <img
+                  src="/featured-cover.png"
+                  alt="Featured YouTube Video"
+                  className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-red-600 bg-opacity-80 rounded-full w-16 h-16 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-8 w-8 text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </div>
                 </div>
-              </div>
-            ))}
+              </a>
+            </div>
           </div>
         </div>
 

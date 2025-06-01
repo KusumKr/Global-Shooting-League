@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 import Layout from "./Layout";
 import { useState } from "react";
 

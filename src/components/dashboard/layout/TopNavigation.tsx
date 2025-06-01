@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Bell, Home, Search, Settings, User } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../../supabase/auth";
+import { useAuth } from "../../../firebase/auth";
 
 interface TopNavigationProps {
   onSearch?: (query: string) => void;

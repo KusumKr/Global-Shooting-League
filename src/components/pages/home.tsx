@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronRight, Settings, User, Menu } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "../../firebase/auth";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";

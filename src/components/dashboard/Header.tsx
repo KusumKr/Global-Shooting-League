@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Settings, User, Menu } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 
 import { useState } from "react";
 

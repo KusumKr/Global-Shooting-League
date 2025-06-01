@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../supabase/auth";
+import { useAuth } from "@/firebase/auth";
 import InfiniteCarousel from "../dashboard/Infinitemoving";
 import Layout from "./Layout";
 
