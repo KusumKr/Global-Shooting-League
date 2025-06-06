@@ -5,6 +5,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import React, { useState } from "react";
 import Layout from "./Layout";
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/firebase/auth";
+import InfiniteCarousel from "../dashboard/Infinitemoving";
 
 const ParallaxScrollPage: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -92,6 +96,18 @@ const ParallaxScrollPage: React.FC = () => {
       description: "",
       image: "/mag3img.png",
       mag: "https://heyzine.com/flip-book/1a14246600.html",
+    },
+    {
+      title: "Magazine 4",
+      description: "",
+      image: "/images/mag4img.png",
+      mag: "https://heyzine.com/flip-book/a1865cff61.html",
+    },
+    {
+      title: "Magazine 5",
+      description: "",
+      image: "/images/mag5img.png",
+      mag: "https://heyzine.com/flip-book/d121dec505.html",
     },
   ];
 

@@ -24,6 +24,8 @@ export default function SignUpForm() {
   const { signUp } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [adminCode, setAdminCode] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -146,6 +148,36 @@ export default function SignUpForm() {
               </label>
             </div>
           </div>
+
+          {/* Sign up as Admin option */}
+          <div className="flex items-center mt-4">
+            <input
+              type="checkbox"
+              id="isAdmin"
+              checked={isAdmin}
+              onChange={() => setIsAdmin(!isAdmin)}
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label htmlFor="isAdmin" className="ml-2 text-sm text-gray-700">
+              Sign up as Admin
+            </label>
+          </div>
+          {isAdmin && (
+            <div className="space-y-2 mt-4">
+              <Label htmlFor="adminCode" className="text-sm font-medium text-gray-700">
+                Admin Code
+              </Label>
+              <Input
+                id="adminCode"
+                type="password"
+                placeholder="Enter admin code"
+                value={adminCode}
+                onChange={(e) => setAdminCode(e.target.value)}
+                required={isAdmin}
+                className="h-12 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+          )}
 
           {error && <p className="text-sm text-red-500">{error}</p>}
 

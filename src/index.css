@@ -103,4 +103,8 @@
   width: max-content;
   animation: marquee 20s linear infinite;
 }
+
+.force-white-text {
+  color: #fff !important;
+}
   

@@ -8,7 +8,7 @@ export default function AboutPage() {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Layout>
         <main className="pt-16">
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-xl font-bold uppercase lg:mb-0 lg:text-7xl">
                   Vision
                 </h2>
-                <div className="text-lg leading-relaxed lg:w-1/2 text-justify">
+                <div className="text-lg leading-relaxed lg:w-1/2 text-justify force-white-text">
                   <p className="mb-4">
                     At Global Shooting League, we envision a world where sports shooting is accessible, inclusive, and celebrated across every corner of the globe. Our goal is to democratize the sport through the infusion of advanced technology, innovation, and strategic collaborations—aiming to make shooting sports a mainstream pursuit by 2030. We believe in nurturing a global community that thrives on precision, discipline, and shared excellence.
                   </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-xl font-bold uppercase lg:mb-0 lg:text-7xl">
                   Mission
                 </h2>
-                <div className="text-lg leading-relaxed lg:w-1/2 text-justify">
+                <div className="text-lg leading-relaxed lg:w-1/2 text-justify force-white-text">
                   <p className="mb-4">
                     Our mission is to build a thriving ecosystem for sports shooting by bringing together all key stakeholders—shooters, coaches, range operators, manufacturers, media professionals, and fans—under one unified digital and physical platform. Through our cutting-edge website, mobile applications, and on-ground initiatives, we aim to:
                   </p>
