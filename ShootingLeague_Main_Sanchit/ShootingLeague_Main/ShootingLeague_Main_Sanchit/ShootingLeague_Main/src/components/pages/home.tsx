@@ -372,6 +372,122 @@ export default function LandingPage() {
           </div>
           <ExecutiveCommittee />
           {/* <MediaSection /> */}
+          {/* Magazine Section with improved header */}
+          {(() => {
+            const articles = [
+              {
+                title: "Magazine 1",
+                description: "",
+                image: "/mag1img.png",
+                mag: "https://heyzine.com/flip-book/ecc71056ed.html",
+              },
+              {
+                title: "Magazine 2",
+                description: "",
+                image: "/mag2img.png",
+                mag: "https://heyzine.com/flip-book/d09a374aec.html",
+              },
+              {
+                title: "Magazine 3",
+                description: "",
+                image: "/mag3img.png",
+                mag: "https://heyzine.com/flip-book/1a14246600.html",
+              },
+              {
+                title: "Magazine 4",
+                description: "",
+                image: "/images/mag4img.png",
+                mag: "https://heyzine.com/flip-book/a1865cff61.html",
+              },
+              {
+                title: "Magazine 5",
+                description: "",
+                image: "/images/mag5img.png",
+                mag: "https://heyzine.com/flip-book/d121dec505.html",
+              },
+            ];
+            const openMagazine = (file) => {
+              window.open(file, "_blank");
+            };
+            return (
+              <div className="mb-12">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                      Featured Magazines
+                    </h2>
+                    <div className="h-1 w-24 bg-green-500 rounded-full"></div>
+                  </div>
+                  <button className="text-green-600 font-medium hover:text-green-800 transition-colors flex items-center">
+                    View All
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <Swiper
+                  modules={[Navigation, Autoplay]}
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  navigation
+                  loop={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
+                  breakpoints={{
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                    1280: { slidesPerView: 3 },
+                  }}
+                  className="pb-8"
+                >
+                  {articles.map((article, index) => (
+                    <SwiperSlide key={index}>
+                      <div
+                        className="mx-2 min-w-[250px] max-w-[300px] md:mx-4 md:min-w-[400px] group cursor-pointer"
+                        onClick={() => openMagazine(article.mag)}
+                      >
+                        <div className="overflow-hidden rounded-lg shadow-md">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full rounded-lg object-cover h-full transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="mt-3 flex justify-between items-center">
+                          <p className="font-bold text-gray-900 md:text-base truncate flex-1">
+                            {article.title}
+                          </p>
+                          <span className="text-green-600 text-sm flex items-center">
+                            Read
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-4 w-4 ml-1"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            );
+          })()}
           <Gallery />
           {/* Watch Our Story Video Section */}
           <section className="py-16 bg-white">
