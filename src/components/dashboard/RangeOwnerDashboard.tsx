@@ -1,0 +1,270 @@
+import React from "react";
+import { useAuth } from "@/firebase/auth";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Users, Calendar, MapPin, BarChart } from "lucide-react";
+import RangeListingForm from "./RangeListingForm";
+
+const RangeOwnerDashboard = () => {
+  const { signOut, user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
+
+  return (
+    <div className="min-h-screen bg-[#f5f5f7]">
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-gray-900">
+            Range Owner Dashboard
+          </h1>
+          <div className="flex items-center space-x-4">
+            <span className="text-sm text-gray-600">{user?.email}</span>
+            <Button
+              onClick={handleSignOut}
+              variant="outline"
+              className="text-sm"
+            >
+              Sign Out
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Total Members
+              </CardTitle>
+              <Users className="h-4 w-4 text-blue-600" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">245</div>
+              <p className="text-xs text-gray-500">+12% from last month</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Upcoming Events
+              </CardTitle>
+              <Calendar className="h-4 w-4 text-green-600" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">5</div>
+              <p className="text-xs text-gray-500">Next 30 days</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Range Facilities
+              </CardTitle>
+              <MapPin className="h-4 w-4 text-red-600" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">3</div>
+              <p className="text-xs text-gray-500">Active locations</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Revenue</CardTitle>
+              <BarChart className="h-4 w-4 text-purple-600" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">$12,450</div>
+              <p className="text-xs text-gray-500">This month</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Scheduled Events</CardTitle>
+              <CardDescription>Upcoming events at your ranges</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-3 px-4 font-medium">
+                        Event Name
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium">Date</th>
+                      <th className="text-left py-3 px-4 font-medium">
+                        Location
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium">
+                        Registrations
+                      </th>
+                      <th className="text-left py-3 px-4 font-medium">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b hover:bg-gray-50">
+                      <td className="py-3 px-4">Summer Championship</td>
+                      <td className="py-3 px-4">July 10, 2024</td>
+                      <td className="py-3 px-4">Main Range</td>
+                      <td className="py-3 px-4">78/100</td>
+                      <td className="py-3 px-4">
+                        <span className="px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                          Open
+                        </span>
+                      </td>
+                    </tr>
+                    <tr className="border-b hover:bg-gray-50">
+                      <td className="py-3 px-4">Junior Training Camp</td>
+                      <td className="py-3 px-4">July 15-20, 2024</td>
+                      <td className="py-3 px-4">Training Center</td>
+                      <td className="py-3 px-4">24/30</td>
+                      <td className="py-3 px-4">
+                        <span className="px-2 py-1 rounded-full text-xs bg-yellow-100 text-yellow-800">
+                          Almost Full
+                        </span>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="py-3 px-4">Regional Qualifier</td>
+                      <td className="py-3 px-4">August 5, 2024</td>
+                      <td className="py-3 px-4">Competition Range</td>
+                      <td className="py-3 px-4">120/120</td>
+                      <td className="py-3 px-4">
+                        <span className="px-2 py-1 rounded-full text-xs bg-red-100 text-red-800">
+                          Full
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Range Usage</CardTitle>
+              <CardDescription>Last 30 days</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="h-[200px] flex items-end justify-between">
+                <div className="w-8 bg-blue-200 rounded-t h-[30%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Mon: 30%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-300 rounded-t h-[45%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Tue: 45%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-400 rounded-t h-[60%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Wed: 60%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-500 rounded-t h-[75%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Thu: 75%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-600 rounded-t h-[90%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Fri: 90%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-700 rounded-t h-[80%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Sat: 80%
+                  </div>
+                </div>
+                <div className="w-8 bg-blue-800 rounded-t h-[70%] relative group">
+                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    Sun: 70%
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Member Distribution</CardTitle>
+              <CardDescription>By membership type</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-sm">Standard</span>
+                    <span className="text-sm font-medium">65%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      style={{ width: "65%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-sm">Premium</span>
+                    <span className="text-sm font-medium">25%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-green-600 h-2.5 rounded-full"
+                      style={{ width: "25%" }}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-sm">VIP</span>
+                    <span className="text-sm font-medium">10%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-purple-600 h-2.5 rounded-full"
+                      style={{ width: "10%" }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mt-8">
+          {/* Range Listing Form */}
+          <RangeListingForm />
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default RangeOwnerDashboard;
