@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Users, Calendar, MapPin, BarChart } from "lucide-react";
 import RangeListingForm from "./RangeListingForm";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const RangeOwnerDashboard = () => {
   const { signOut, user } = useAuth();
@@ -23,75 +22,74 @@ const RangeOwnerDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <header className="bg-gradient-to-r from-blue-700 to-green-500 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <div>
-            <h1 className="text-4xl font-extrabold text-white drop-shadow mb-1">Range Owner Dashboard</h1>
-            <p className="text-lg text-blue-100 font-medium drop-shadow">Welcome to your range management center!</p>
-          </div>
+    <div className="min-h-screen bg-[#f5f5f7]">
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-gray-900">
+            Range Owner Dashboard
+          </h1>
           <div className="flex items-center space-x-4">
-            <Avatar className="h-12 w-12 border-2 border-white shadow-lg">
-              <AvatarImage src={user?.photoURL || undefined} alt={user?.email || 'User'} />
-              <AvatarFallback>{user?.email?.[0]?.toUpperCase() || 'U'}</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col items-end">
-              <span className="text-base text-white font-semibold">{user?.email}</span>
-              <Button
-                onClick={handleSignOut}
-                variant="outline"
-                className="text-sm mt-2 bg-white/80 hover:bg-white text-blue-700 border-none shadow"
-              >
-                Sign Out
-              </Button>
-            </div>
+            <span className="text-sm text-gray-600">{user?.email}</span>
+            <Button
+              onClick={handleSignOut}
+              variant="outline"
+              className="text-sm"
+            >
+              Sign Out
+            </Button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-6 md:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-          <Card className="transition-transform duration-200 hover:scale-105 shadow-xl bg-gradient-to-br from-blue-100 to-blue-50 border-0">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-base font-semibold text-blue-900">Total Members</CardTitle>
-              <span className="bg-blue-600 p-2 rounded-full shadow"><Users className="h-5 w-5 text-white" /></span>
+              <CardTitle className="text-sm font-medium">
+                Total Members
+              </CardTitle>
+              <Users className="h-4 w-4 text-blue-600" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-extrabold text-blue-800 animate-pulse">245</div>
-              <p className="text-xs text-blue-600 font-medium">+12% from last month</p>
+              <div className="text-2xl font-bold">245</div>
+              <p className="text-xs text-gray-500">+12% from last month</p>
             </CardContent>
           </Card>
 
-          <Card className="transition-transform duration-200 hover:scale-105 shadow-xl bg-gradient-to-br from-green-100 to-green-50 border-0">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-base font-semibold text-green-900">Upcoming Events</CardTitle>
-              <span className="bg-green-600 p-2 rounded-full shadow"><Calendar className="h-5 w-5 text-white" /></span>
+              <CardTitle className="text-sm font-medium">
+                Upcoming Events
+              </CardTitle>
+              <Calendar className="h-4 w-4 text-green-600" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-extrabold text-green-800 animate-pulse">5</div>
-              <p className="text-xs text-green-600 font-medium">Next 30 days</p>
+              <div className="text-2xl font-bold">5</div>
+              <p className="text-xs text-gray-500">Next 30 days</p>
             </CardContent>
           </Card>
 
-          <Card className="transition-transform duration-200 hover:scale-105 shadow-xl bg-gradient-to-br from-red-100 to-red-50 border-0">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-base font-semibold text-red-900">Range Facilities</CardTitle>
-              <span className="bg-red-600 p-2 rounded-full shadow"><MapPin className="h-5 w-5 text-white" /></span>
+              <CardTitle className="text-sm font-medium">
+                Range Facilities
+              </CardTitle>
+              <MapPin className="h-4 w-4 text-red-600" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-extrabold text-red-800 animate-pulse">3</div>
-              <p className="text-xs text-red-600 font-medium">Active locations</p>
+              <div className="text-2xl font-bold">3</div>
+              <p className="text-xs text-gray-500">Active locations</p>
             </CardContent>
           </Card>
 
-          <Card className="transition-transform duration-200 hover:scale-105 shadow-xl bg-gradient-to-br from-purple-100 to-purple-50 border-0">
+          <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-base font-semibold text-purple-900">Revenue</CardTitle>
-              <span className="bg-purple-600 p-2 rounded-full shadow"><BarChart className="h-5 w-5 text-white" /></span>
+              <CardTitle className="text-sm font-medium">Revenue</CardTitle>
+              <BarChart className="h-4 w-4 text-purple-600" />
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-extrabold text-purple-800 animate-pulse">$12,450</div>
-              <p className="text-xs text-purple-600 font-medium">This month</p>
+              <div className="text-2xl font-bold">$12,450</div>
+              <p className="text-xs text-gray-500">This month</p>
             </CardContent>
           </Card>
         </div>
@@ -104,7 +102,7 @@ const RangeOwnerDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="w-full text-xs sm:text-sm md:text-base rounded-xl overflow-hidden">
+                <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b">
                       <th className="text-left py-3 px-4 font-medium">
