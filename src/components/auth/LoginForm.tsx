@@ -33,13 +33,13 @@ export default function LoginForm() {
   };
 
   return (
-    <AuthLayout>
-      <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
+    <AuthLayout title="Sign In">
+      <div className="bg-white rounded-3xl shadow-xl p-10 w-full max-w-md mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-7">
+          <div className="space-y-3">
             <Label
               htmlFor="email"
-              className="text-sm font-medium text-gray-700"
+              className="text-sm font-semibold text-gray-700"
             >
               Email
             </Label>
@@ -50,20 +50,20 @@ export default function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="h-12 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
             />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label
                 htmlFor="password"
-                className="text-sm font-medium text-gray-700"
+                className="text-sm font-semibold text-gray-700"
               >
                 Password
               </Label>
               <Link
                 to="/forgot-password"
-                className="text-sm font-medium text-blue-600 hover:text-blue-500"
+                className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
               >
                 Forgot password?
               </Link>
@@ -75,25 +75,25 @@ export default function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="h-12 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
             />
           </div>
-          {error && <p className="text-sm text-red-500">{error}</p>}
+          {error && <p className="text-sm text-red-600 text-center">{error}</p>}
           <Button
             id="login-button"
             type="submit"
-            className="w-full h-12 rounded-full bg-black text-white hover:bg-gray-800 text-sm font-medium"
+            className="w-full h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
           >
-            Sign in
+            Sign In
           </Button>
 
           <div className="text-sm text-center text-gray-600 mt-6">
             Don't have an account?{" "}
             <Link
               to="/signup"
-              className="text-blue-600 hover:underline font-medium"
+              className="text-blue-600 hover:underline font-bold"
             >
-              Sign up
+              Sign Up
             </Link>
           </div>
         </form>

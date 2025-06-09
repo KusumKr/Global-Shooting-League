@@ -371,55 +371,24 @@ export default function LandingPage() {
             </div>
           </div>
           <ExecutiveCommittee />
-          {/* <MediaSection /> */}
-          {/* Magazine Section with improved header */}
+        
+         
           {(() => {
             const articles = [
-              {
-                title: "Magazine 1",
-                description: "",
-                image: "/mag1img.png",
-                mag: "https://heyzine.com/flip-book/ecc71056ed.html",
-              },
-              {
-                title: "Magazine 2",
-                description: "",
-                image: "/mag2img.png",
-                mag: "https://heyzine.com/flip-book/d09a374aec.html",
-              },
-              {
-                title: "Magazine 3",
-                description: "",
-                image: "/mag3img.png",
-                mag: "https://heyzine.com/flip-book/1a14246600.html",
-              },
-              {
-                title: "Magazine 4",
-                description: "",
-                image: "/images/mag4img.png",
-                mag: "https://heyzine.com/flip-book/a1865cff61.html",
-              },
-              {
-                title: "Magazine 5",
-                description: "",
-                image: "/images/mag5img.png",
-                mag: "https://heyzine.com/flip-book/d121dec505.html",
-              },
+
             ];
-            const openMagazine = (file) => {
-              window.open(file, "_blank");
-            };
+            
             return (
               <div className="mb-12">
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                      Featured Magazines
+                      
                     </h2>
                     <div className="h-1 w-24 bg-green-500 rounded-full"></div>
                   </div>
                   <button className="text-green-600 font-medium hover:text-green-800 transition-colors flex items-center">
-                    View All
+                    
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 ml-1"
@@ -490,13 +459,13 @@ export default function LandingPage() {
           })()}
           <Gallery />
           {/* Watch Our Story Video Section */}
-          <section className="py-16 bg-white">
-            <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-6">
-                Watch Our Story
+          <section className="py-6 bg-white px-4">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-2">
+                FOUNDER'S DESK
               </h2>
               <div className="flex justify-center">
-                <div className="relative w-full max-w-2xl aspect-video rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
                   <a
                     href="https://www.youtube.com/watch?v=iLd34M-SboQ"
                     target="_blank"

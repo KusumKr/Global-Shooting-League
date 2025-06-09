@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAuth } from "@/firebase/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
+import { User, Calendar, Award, Star, Briefcase } from "lucide-react";
 
 interface ShooterProfile {
   fullName: string;
@@ -30,7 +31,11 @@ export default function ShooterProfile() {
   // No Firestore fetching or saving
   // Only UI and local state logic
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleChange = (e: any) => {
+    setProfile({ ...profile, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     toast({
       title: "Success",
@@ -43,59 +48,78 @@ export default function ShooterProfile() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6">Shooter Profile</h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="w-full max-w-lg mx-auto bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 rounded-2xl shadow-xl p-6">
+      <h2 className="text-2xl font-extrabold text-blue-700 mb-4 flex items-center gap-2 justify-center">
+        <User className="w-7 h-7 text-blue-400" /> Shooter Profile
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4 w-full">
         <div>
-          <Label htmlFor="fullName">Full Name</Label>
+          <Label htmlFor="fullName" className="flex items-center gap-2 text-blue-700 font-semibold">
+            <User className="w-5 h-5 text-blue-400" /> Full Name
+          </Label>
           <Input
             id="fullName"
+            name="fullName"
             value={profile.fullName}
-            onChange={(e) => setProfile({ ...profile, fullName: e.target.value })}
-            required
+            onChange={handleChange}
+            className="mt-1 w-full rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-300 focus:border-blue-400 transition shadow-sm"
           />
         </div>
-
         <div>
-          <Label htmlFor="age">Age</Label>
+          <Label htmlFor="age" className="flex items-center gap-2 text-green-700 font-semibold">
+            <Calendar className="w-5 h-5 text-green-400" /> Age
+          </Label>
           <Input
             id="age"
+            name="age"
             type="number"
             value={profile.age}
-            onChange={(e) => setProfile({ ...profile, age: parseInt(e.target.value) })}
-            required
+            onChange={handleChange}
+            className="mt-1 w-full rounded-lg border border-green-200 focus:ring-2 focus:ring-green-300 focus:border-green-400 transition shadow-sm"
           />
         </div>
-
         <div>
-          <Label htmlFor="experience">Experience</Label>
+          <Label htmlFor="experience" className="flex items-center gap-2 text-purple-700 font-semibold">
+            <Briefcase className="w-5 h-5 text-purple-400" /> Experience
+          </Label>
           <Input
             id="experience"
+            name="experience"
             value={profile.experience}
-            onChange={(e) => setProfile({ ...profile, experience: e.target.value })}
-            required
+            onChange={handleChange}
+            className="mt-1 w-full rounded-lg border border-purple-200 focus:ring-2 focus:ring-purple-300 focus:border-purple-400 transition shadow-sm"
           />
         </div>
-
         <div>
-          <Label htmlFor="achievements">Achievements</Label>
+          <Label htmlFor="achievements" className="flex items-center gap-2 text-yellow-700 font-semibold">
+            <Award className="w-5 h-5 text-yellow-400" /> Achievements
+          </Label>
           <Input
             id="achievements"
+            name="achievements"
             value={profile.achievements}
-            onChange={(e) => setProfile({ ...profile, achievements: e.target.value })}
+            onChange={handleChange}
+            className="mt-1 w-full rounded-lg border border-yellow-200 focus:ring-2 focus:ring-yellow-300 focus:border-yellow-400 transition shadow-sm"
           />
         </div>
-
         <div>
-          <Label htmlFor="equipment">Equipment</Label>
+          <Label htmlFor="equipment" className="flex items-center gap-2 text-pink-700 font-semibold">
+            <Star className="w-5 h-5 text-pink-400" /> Equipment
+          </Label>
           <Input
             id="equipment"
+            name="equipment"
             value={profile.equipment}
-            onChange={(e) => setProfile({ ...profile, equipment: e.target.value })}
+            onChange={handleChange}
+            className="mt-1 w-full rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-300 focus:border-pink-400 transition shadow-sm"
           />
         </div>
-
-        <Button type="submit">Save Profile</Button>
+        <Button
+          type="submit"
+          className="w-full py-3 text-lg font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:from-purple-500 hover:to-blue-500 transition rounded-lg mt-4"
+        >
+          Save Profile
+        </Button>
       </form>
     </div>
   );

@@ -51,22 +51,23 @@ export default function SignUpForm() {
   };
 
   return (
-    <AuthLayout>
-      <div className="bg-white rounded-2xl shadow-sm p-8 w-full max-w-md mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="fullName">Full Name</Label>
+    <AuthLayout title="Sign Up">
+      <div className="bg-white rounded-3xl shadow-xl p-10 w-full max-w-md mx-auto">
+        <form onSubmit={handleSubmit} className="space-y-7">
+          <div className="space-y-3">
+            <Label htmlFor="fullName" className="text-sm font-semibold text-gray-700">Full Name</Label>
             <Input
               id="fullName"
               placeholder="John Doe"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
+              className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+          <div className="space-y-3">
+            <Label htmlFor="email" className="text-sm font-semibold text-gray-700">Email</Label>
             <Input
               id="email"
               type="email"
@@ -74,11 +75,12 @@ export default function SignUpForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+          <div className="space-y-3">
+            <Label htmlFor="password" className="text-sm font-semibold text-gray-700">Password</Label>
             <Input
               id="password"
               type="password"
@@ -86,65 +88,72 @@ export default function SignUpForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label>I am a</Label>
+          <div className="space-y-3">
+            <Label className="text-sm font-semibold text-gray-700">I am a</Label>
             <div className="flex flex-wrap gap-4">
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="shooter"
                   checked={role === "shooter"}
                   onChange={() => setRole("shooter")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Shooter
+                <span className="text-gray-700 text-sm">Shooter</span>
               </label>
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="range_owner"
                   checked={role === "range_owner"}
                   onChange={() => setRole("range_owner")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Range Owner
+                <span className="text-gray-700 text-sm">Range Owner</span>
               </label>
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="technical_coach"
                   checked={role === "technical_coach"}
                   onChange={() => setRole("technical_coach")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Technical Coach
+                <span className="text-gray-700 text-sm">Technical Coach</span>
               </label>
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="dietician"
                   checked={role === "dietician"}
                   onChange={() => setRole("dietician")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Dietician
+                <span className="text-gray-700 text-sm">Dietician</span>
               </label>
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="mental_trainer"
                   checked={role === "mental_trainer"}
                   onChange={() => setRole("mental_trainer")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Mental Trainer
+                <span className="text-gray-700 text-sm">Mental Trainer</span>
               </label>
-              <label>
+              <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
                   value="franchise_owner"
                   checked={role === "franchise_owner"}
                   onChange={() => setRole("franchise_owner")}
+                  className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300"
                 />{" "}
-                Franchise Owner
+                <span className="text-gray-700 text-sm">Franchise Owner</span>
               </label>
             </div>
           </div>
@@ -156,15 +165,15 @@ export default function SignUpForm() {
               id="isAdmin"
               checked={isAdmin}
               onChange={() => setIsAdmin(!isAdmin)}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <label htmlFor="isAdmin" className="ml-2 text-sm text-gray-700">
               Sign up as Admin
             </label>
           </div>
           {isAdmin && (
-            <div className="space-y-2 mt-4">
-              <Label htmlFor="adminCode" className="text-sm font-medium text-gray-700">
+            <div className="space-y-3 mt-4">
+              <Label htmlFor="adminCode" className="text-sm font-semibold text-gray-700">
                 Admin Code
               </Label>
               <Input
@@ -174,20 +183,25 @@ export default function SignUpForm() {
                 value={adminCode}
                 onChange={(e) => setAdminCode(e.target.value)}
                 required={isAdmin}
-                className="h-12 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                className="h-12 rounded-lg border-2 border-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
               />
             </div>
           )}
 
-          {error && <p className="text-sm text-red-500">{error}</p>}
+          {error && <p className="text-sm text-red-600 text-center">{error}</p>}
 
-          <Button type="submit">Create account</Button>
+          <Button
+            type="submit"
+            className="w-full h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+          >
+            Create account
+          </Button>
 
           <div className="text-sm text-center text-gray-600 mt-6">
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-blue-600 hover:underline font-medium"
+              className="text-blue-600 hover:underline font-bold"
             >
               Sign in
             </Link>
