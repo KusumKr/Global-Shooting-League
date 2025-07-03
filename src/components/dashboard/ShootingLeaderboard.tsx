@@ -37,16 +37,16 @@ const ShootingLeaderboard = () => {
   return (
     <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 gap-8 px-4">
       {/* Leaderboard Card */}
-      <div className="rounded-2xl shadow-2xl bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 p-8 text-white">
+      <div className="rounded-2xl shadow-2xl bg-gradient-to-br from-pink-100 via-yellow-100 to-green-100 p-8 text-gray-800">
         <div className="flex items-center mb-2">
           <Trophy className="w-8 h-8 text-yellow-400 mr-2" />
           <span className="text-3xl font-extrabold tracking-tight">LEADERBOARD</span>
         </div>
-        <div className="text-blue-100 mb-6 text-lg">Top shooting scores from all shooters</div>
-        <div className="bg-blue-800/40 rounded-xl overflow-x-auto">
+        <div className="text-gray-500 mb-6 text-lg">Top shooting scores from all shooters</div>
+        <div className="bg-pink-50 rounded-xl overflow-x-auto">
           <table className="w-full text-left">
             <thead>
-              <tr className="text-blue-200 text-lg">
+              <tr className="text-pink-500 text-lg">
                 <th className="py-4 px-4 font-semibold">#</th>
                 <th className="py-4 px-4 font-semibold">Player</th>
                 <th className="py-4 px-4 font-semibold">Session</th>
@@ -57,12 +57,12 @@ const ShootingLeaderboard = () => {
             </thead>
             <tbody>
               {leaderboardData.map((row) => (
-                <tr key={row.id} className="border-b border-blue-700 last:border-0 hover:bg-blue-900/30 transition">
+                <tr key={row.id} className="border-b border-yellow-100 last:border-0 hover:bg-yellow-50 transition">
                   <td className="py-3 px-4 font-bold text-xl">{rankIcon(row.rank)}</td>
                   <td className="py-3 px-4 font-semibold">{row.player}</td>
                   <td className="py-3 px-4 font-semibold">{row.session}</td>
                   <td className="py-3 px-4">{stars(row.stars)}</td>
-                  <td className="py-3 px-4 font-bold text-cyan-200">{row.score}</td>
+                  <td className="py-3 px-4 font-bold text-blue-500">{row.score}</td>
                   <td className="py-3 px-4 font-semibold">{row.date}</td>
                 </tr>
               ))}

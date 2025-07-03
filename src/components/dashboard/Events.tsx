@@ -88,11 +88,9 @@ const EventsSection: React.FC = () => {
         </div>
 
         <div className="text-center mt-10">
-          <Link to="/events">
-            <button className="bg-blue-700 hover:bg-blue-800 text-white rounded-full px-6">
-              View All Events
-            </button>
-          </Link>
+          <button className="bg-blue-700 hover:bg-blue-800 text-white rounded-full px-6" onClick={() => {}}>
+            View All Events
+          </button>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAuth } from "@/firebase/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -32,12 +32,54 @@ export default function RangeListingForm() {
   });
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [logo, setLogo] = useState<string | null>(null);
+  const logoInputRef = useRef<HTMLInputElement>(null);
+  const [rangeImages, setRangeImages] = useState<string[]>([]);
+  const [showChargeMsg, setShowChargeMsg] = useState(false);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setImageFile(e.target.files[0]);
       setImagePreview(URL.createObjectURL(e.target.files[0]));
     }
+  };
+
+  const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file && ["image/png", "image/jpeg", "image/svg+xml"].includes(file.type) && file.size <= 2 * 1024 * 1024) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLogo(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("Please select a PNG, JPG, or SVG image up to 2MB.");
+    }
+  };
+
+  const handleRemoveLogo = () => setLogo(null);
+
+  const handleRangeImagesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files ? Array.from(e.target.files) : [];
+    const validFiles = files.filter(file => file.type.startsWith('image/'));
+    const readers = validFiles.map(file => {
+      return new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+    });
+    Promise.all(readers).then(images => {
+      const allImages = [...rangeImages, ...images];
+      setRangeImages(allImages.slice(0, 10));
+      setShowChargeMsg(allImages.length > 5);
+    });
+  };
+
+  const handleRemoveRangeImage = (idx: number) => {
+    const newImages = rangeImages.filter((_, i) => i !== idx);
+    setRangeImages(newImages);
+    setShowChargeMsg(newImages.length > 5);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -66,6 +108,41 @@ export default function RangeListingForm() {
           <List className="w-7 h-7 text-blue-500" /> Create Range Listing
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="flex flex-col items-center mb-6">
+            {logo ? (
+              <img src={logo} alt="Range Logo" className="w-24 h-24 rounded-full object-cover border-4 border-blue-200 shadow mb-2" />
+            ) : (
+              <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-400 mb-2">
+                No Logo
+              </div>
+            )}
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/svg+xml"
+              ref={logoInputRef}
+              onChange={handleLogoChange}
+              className="hidden"
+            />
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
+                onClick={() => logoInputRef.current?.click()}
+              >
+                {logo ? "Change Logo" : "Upload Logo"}
+              </button>
+              {logo && (
+                <button
+                  type="button"
+                  className="px-3 py-2 bg-red-400 text-white rounded-lg shadow hover:bg-red-500 transition"
+                  onClick={handleRemoveLogo}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+            <span className="text-xs text-gray-500 mt-1">Max size: 2MB | PNG, JPG, or SVG recommended</span>
+          </div>
           <div>
             <Label htmlFor="name" className="flex items-center gap-2 font-semibold">
               <Type className="w-4 h-4 text-blue-400" /> Range Name
@@ -147,24 +224,40 @@ export default function RangeListingForm() {
           </div>
 
           <div>
-            <Label htmlFor="image" className="flex items-center gap-2 font-semibold">
-              <ImageIcon className="w-4 h-4 text-orange-400" /> Range Image
+            <Label htmlFor="rangeImages" className="flex items-center gap-2 font-semibold">
+              <ImageIcon className="w-4 h-4 text-orange-400" /> Range Images
             </Label>
             <Input
-              id="image"
+              id="rangeImages"
               type="file"
               accept="image/*"
-              onChange={handleImageChange}
+              multiple
+              onChange={handleRangeImagesChange}
               className="mt-1 focus:ring-2 focus:ring-orange-300 focus:border-orange-400 transition"
             />
-            {imagePreview && (
-              <div className="mt-3 flex items-center gap-3">
-                <img
-                  src={imagePreview}
-                  alt="Preview"
-                  className="w-32 h-24 object-cover rounded-lg border border-gray-200 shadow"
-                />
-                <span className="text-xs text-gray-500">Image Preview</span>
+            {rangeImages.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-3">
+                {rangeImages.map((img, idx) => (
+                  <div key={idx} className="relative">
+                    <img
+                      src={img}
+                      alt={`Range ${idx + 1}`}
+                      className="w-24 h-20 object-cover rounded-lg border border-gray-200 shadow"
+                    />
+                    <button
+                      type="button"
+                      className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                      onClick={() => handleRemoveRangeImage(idx)}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {showChargeMsg && (
+              <div className="mt-2 text-sm text-red-500 font-semibold">
+                Uploading more than 5 images will be charged.
               </div>
             )}
           </div>

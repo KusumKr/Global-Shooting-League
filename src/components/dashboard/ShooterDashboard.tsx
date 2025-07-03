@@ -14,8 +14,7 @@ import ShooterProfile from "./ShooterProfile";
 import ShootingSessionUpload from "./ShootingSessionUpload";
 import ShootingLeaderboard from "./ShootingLeaderboard";
 
-// Import only the leaderboard and session data and helpers from ShootingLeaderboard
-// We'll duplicate the logic here for layout control
+
 const leaderboardData = [
   { id: 1, rank: 1, player: "Player One", session: "Finals", stars: 5, score: 2980, date: "2024-06-01" },
   { id: 2, rank: 2, player: "Player Two", session: "Semi-Finals", stars: 4, score: 2721, date: "2024-05-28" },
@@ -61,9 +60,9 @@ const ShooterDashboard = () => {
         <div className="flex items-center gap-4 mt-6 md:mt-0">
           <div className="flex items-center gap-2">
             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-xl font-bold text-blue-700 border-2 border-blue-200">
-              {user?.email ? user.email[0].toUpperCase() : "K"}
+              {user?.displayName ? user.displayName.split('|')[0][0].toUpperCase() : user?.email ? user.email[0].toUpperCase() : "S"}
             </div>
-            <span className="text-white font-semibold text-lg hidden md:block">{user?.email}</span>
+            <span className="text-white font-semibold text-lg hidden md:block">{user?.displayName ? user.displayName.split('|')[0] : user?.email || "Shooter"}</span>
           </div>
           <Button
             onClick={handleSignOut}

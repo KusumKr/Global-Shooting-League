@@ -60,7 +60,7 @@ const RangeOwnerDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight mb-1 flex items-center gap-2">
-              <span>👋</span> Welcome, {user?.email || "Range Owner"}!
+              <span>👋</span> Welcome, {(user?.displayName?.split('|')[0]) || user?.email || "Range Owner"}!
             </h1>
             <p className="text-sm text-gray-500 font-medium">Range Owner Dashboard</p>
           </div>
