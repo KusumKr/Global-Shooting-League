@@ -1,16 +1,19 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDi5-5d1jkellma4ajusOt3GvfEcBsQtTA",
-  authDomain: "global-shootingleague.firebaseapp.com",
-  projectId: "global-shootingleague",
-  storageBucket: "global-shootingleague.firebasestorage.app",
-  messagingSenderId: "889901571140",
-  appId: "1:889901571140:web:1d72cec994fe66f6797011",
-  measurementId: "G-MJDDEJBWYT"
+  apiKey: "AIzaSyDEn_OqnTLRjkb3-c7KQl_3w6wexmpL1Xc",
+  authDomain: "nebula-ee3da.firebaseapp.com",
+  projectId: "nebula-ee3da",
+  storageBucket: "nebula-ee3da.firebasestorage.app",
+  messagingSenderId: "569116961522",
+  appId: "1:569116961522:web:58d3ba661a70f8df823e6b",
+  measurementId: "G-2ELR59TT1T"
 };
 
 // Initialize Firebase
