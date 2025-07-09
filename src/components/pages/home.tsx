@@ -106,6 +106,46 @@ export default function LandingPage() {
     },
   ];
 
+  // Add after NewsForum and before Gallery
+  const homeMagazines = [
+    {
+      title: "Magazine 6",
+      description: "",
+      image: "/images/mag6 img.png",
+      mag: "https://heyzine.com/flip-book/485b972e41.html",
+    },
+    {
+      title: "Magazine 5",
+      description: "",
+      image: "/images/mag5img.png",
+      mag: "https://heyzine.com/flip-book/d121dec505.html",
+    },
+    {
+      title: "Magazine 4",
+      description: "",
+      image: "/images/mag4img.png",
+      mag: "https://heyzine.com/flip-book/a1865cff61.html",
+    },
+    {
+      title: "Magazine 3",
+      description: "",
+      image: "/mag3img.png",
+      mag: "https://heyzine.com/flip-book/1a14246600.html",
+    },
+    {
+      title: "Magazine 2",
+      description: "",
+      image: "/mag2img.png",
+      mag: "https://heyzine.com/flip-book/d09a374aec.html",
+    },
+    {
+      title: "Magazine 1",
+      description: "",
+      image: "/mag1img.png",
+      mag: "https://heyzine.com/flip-book/ecc71056ed.html",
+    },
+  ];
+
   return (
     <Layout>
       <div className="min-h-screen bg-white text-black">
@@ -179,102 +219,60 @@ export default function LandingPage() {
           <RankingsSection />
           <NewsForum />
           <div className="container mx-auto p-4 max-w-7xl">
-            <h1 className="text-4xl font-bold text-center mb-6 text-blue-800">
-              Shooting Ranges Finder
-            </h1>
-
-            <div className="mb-6">
-              <input
-                type="text"
-                placeholder="Search by name or location..."
-                className="border-2 border-blue-300 p-3 w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-
-            {/* Map section - larger and more prominent */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-              <h2 className="bg-blue-700 text-white p-3 text-xl font-semibold">
-                Location Map
-              </h2>
-              <div className="h-96 w-full">
-                <Map ranges={filteredRanges} selectedRange={selectedRange} />
-              </div>
-            </div>
-
-            {/* Ranges section - now below the map */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <h2 className="bg-blue-700 text-white p-3 text-xl font-semibold">
-                Available Ranges ({filteredRanges.length})
-              </h2>
-
-              <div className="p-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {filteredRanges.slice(0, visibleCount).map((range) => (
-                    <button
-                      key={range.id}
-                      onClick={() => setSelectedRange(range)}
-                      className={`flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg w-full text-left transition-all duration-200 hover:shadow-md ${
-                        selectedRange?.id === range.id
-                          ? "bg-blue-50 border-2 border-blue-500"
-                          : "bg-gray-50 border border-gray-200"
-                      }`}
-                    >
-                      <img
-                        src={range.image}
-                        alt={range.name}
-                        className="w-full md:w-2/5 h-48 md:h-32 object-cover rounded-lg"
-                      />
-                      <div className="w-full md:w-3/5 mt-2 md:mt-0">
-                        <h3 className="text-xl font-bold text-blue-800">
-                          {range.name}
-                        </h3>
-                        <p className="text-gray-700 mt-1">{range.address}</p>
-                        <div className="flex items-center mt-2">
-                          <span
-                            className={`inline-block w-3 h-3 rounded-full mr-2 ${
-                              range.status === "Open"
-                                ? "bg-green-500"
-                                : "bg-red-500"
-                            }`}
-                          ></span>
-                          <span
-                            className={
-                              range.status === "Open"
-                                ? "text-green-700"
-                                : "text-red-700"
-                            }
-                          >
-                            {range.status}
-                          </span>
-                          <span className="mx-2">•</span>
-                          <span className="text-gray-600">
-                            {range.openingHours}
-                          </span>
-                        </div>
-                        <p className="text-green-600 font-semibold mt-2">
-                          {range.price}
-                        </p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-
-                {visibleCount < filteredRanges.length && (
-                  <button
-                    onClick={() => setVisibleCount((prev) => prev + 3)}
-                    className="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-medium w-full transition-colors duration-200"
+            <h2 className="text-4xl font-extrabold text-center mb-6 text-red-600">MAGAZINES</h2>
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={20}
+              navigation={true}
+              loop={false}
+              autoplay={false}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 3 },
+              }}
+              className="pb-8"
+            >
+              {homeMagazines.map((article, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    className="mx-2 min-w-[250px] max-w-[300px] md:mx-4 md:min-w-[400px] group cursor-pointer"
+                    onClick={() => window.open(article.mag, "_blank")}
                   >
-                    Load More Ranges
-                  </button>
-                )}
-              </div>
-            </div>
+                    <div className="overflow-hidden rounded-lg shadow-md">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full rounded-lg object-cover h-full transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="mt-3 flex justify-between items-center">
+                      <p className="font-bold text-gray-900 md:text-base truncate flex-1">
+                        {article.title}
+                      </p>
+                      <span className="text-green-600 text-sm flex items-center">
+                        Read
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 ml-1"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-          <ExecutiveCommittee />
-        
-         
-           <Gallery />
+          <Gallery />
           {/* Watch Our Story Video Section */}
           <section className="py-6 bg-white px-4">
             <div className="max-w-6xl mx-auto text-center">
