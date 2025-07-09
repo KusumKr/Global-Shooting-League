@@ -77,25 +77,19 @@ const ParallaxScrollPage: React.FC = () => {
     },
   ]);
 
-  // Articles data - unchanged
+  // Articles data - updated
   const articles = [
     {
-      title: "Magazine 1",
+      title: "Magazine 6",
       description: "",
-      image: "/mag1img.png",
-      mag: "https://heyzine.com/flip-book/ecc71056ed.html",
+      image: "/images/mag6 img.png", // Corrected image path
+      mag: "https://heyzine.com/flip-book/485b972e41.html",
     },
     {
-      title: "Magazine 2",
+      title: "Magazine 5",
       description: "",
-      image: "/mag2img.png",
-      mag: "https://heyzine.com/flip-book/d09a374aec.html",
-    },
-    {
-      title: "Magazine 3",
-      description: "",
-      image: "/mag3img.png",
-      mag: "https://heyzine.com/flip-book/1a14246600.html",
+      image: "/images/mag5img.png",
+      mag: "https://heyzine.com/flip-book/d121dec505.html",
     },
     {
       title: "Magazine 4",
@@ -104,10 +98,22 @@ const ParallaxScrollPage: React.FC = () => {
       mag: "https://heyzine.com/flip-book/a1865cff61.html",
     },
     {
-      title: "Magazine 5",
+      title: "Magazine 3",
       description: "",
-      image: "/images/mag5img.png",
-      mag: "https://heyzine.com/flip-book/d121dec505.html",
+      image: "/mag3img.png",
+      mag: "https://heyzine.com/flip-book/1a14246600.html",
+    },
+    {
+      title: "Magazine 2",
+      description: "",
+      image: "/mag2img.png",
+      mag: "https://heyzine.com/flip-book/d09a374aec.html",
+    },
+    {
+      title: "Magazine 1",
+      description: "",
+      image: "/mag1img.png",
+      mag: "https://heyzine.com/flip-book/ecc71056ed.html",
     },
   ];
 
