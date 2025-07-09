@@ -82,7 +82,7 @@ const ParallaxScrollPage: React.FC = () => {
     {
       title: "Magazine 6",
       description: "",
-      image: "/images/mag6 img.png", // Corrected image path
+      image: "/images/mag6-img.png", // Corrected image path
       mag: "https://heyzine.com/flip-book/485b972e41.html",
     },
     {

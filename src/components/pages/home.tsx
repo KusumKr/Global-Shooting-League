@@ -111,7 +111,7 @@ export default function LandingPage() {
     {
       title: "Magazine 6",
       description: "",
-      image: "/images/mag6 img.png",
+      image: "/images/mag6-img.png",
       mag: "https://heyzine.com/flip-book/485b972e41.html",
     },
     {
