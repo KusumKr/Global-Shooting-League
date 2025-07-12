@@ -1,21 +1,20 @@
-// import { initializeApp } from 'firebase/app';
-// import { getAuth } from 'firebase/auth';
-// import { getAnalytics } from 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getAnalytics } from 'firebase/analytics';
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDi5-5d1jkellma4ajusOt3GvfEcBsQtTA",
-//   authDomain: "global-shootingleague.firebaseapp.com",
-//   projectId: "global-shootingleague",
-//   storageBucket: "global-shootingleague.firebasestorage.app",
-//   messagingSenderId: "889901571140",
-//   appId: "1:889901571140:web:1d72cec994fe66f6797011",
-//   measurementId: "G-MJDDEJBWYT"
-// };
+const firebaseConfig = {
+  apiKey: "AIzaSyDEn_OqnTLRjkb3-c7KQl_3w6wexmpL1Xc",
+  authDomain: "nebula-ee3da.firebaseapp.com",
+  projectId: "nebula-ee3da",
+  storageBucket: "nebula-ee3da.firebasestorage.app",
+  messagingSenderId: "569116961522",
+  appId: "1:569116961522:web:58d3ba661a70f8df823e6b",
+  measurementId: "G-2ELR59TT1T"
+};
 
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// export const auth = getAuth(app);
-// export const analytics = getAnalytics(app);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const analytics = getAnalytics(app);
 
-// export default app;
+export default app;
